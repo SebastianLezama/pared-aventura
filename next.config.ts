@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
       {
         hostname: "ik.imagekit.io",
         protocol: "https",
+      },
+      {
+        hostname: "zaixtvloxvtlauxdlrhg.supabase.co",
+        protocol: "https",
       }
     ],
   },

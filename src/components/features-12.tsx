@@ -12,79 +12,75 @@ export default function Features() {
 
     const images = {
         'item-1': {
-            image: '/charts.png',
+            image: 'https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/7148c782-8cb7-4e33-8a25-c66603cafca9.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvNzE0OGM3ODItOGNiNy00ZTMzLThhMjUtYzY2NjAzY2FmY2E5LnBuZyIsImlhdCI6MTc1NTM1NDMzNCwiZXhwIjoxNzg2ODkwMzM0fQ.jf34kQMzCNg55bKhCuzVDlbit_QjlKEDUUW8Av2ZlGw',
             alt: 'Database visualization',
         },
         'item-2': {
-            image: '/music.png',
+            image: 'https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/42350af3-31ba-4ec5-9f71-d354a4e50ff0.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvNDIzNTBhZjMtMzFiYS00ZWM1LTlmNzEtZDM1NGE0ZTUwZmYwLnBuZyIsImlhdCI6MTc1NTM1NDQ4OSwiZXhwIjoxNzg2ODkwNDg5fQ.TLSd3L577yaxjfyWq3-ZRXUNAZ7bBsvHgMijjzw7lUs',
             alt: 'Security authentication',
         },
         'item-3': {
-            image: '/mail2.png',
+            image: 'https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/Planchas%20Stickers.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvUGxhbmNoYXMgU3RpY2tlcnMuanBnIiwiaWF0IjoxNzU1MzU4NjM3LCJleHAiOjE3ODY4OTQ2Mzd9.q3RMcg9ydVsbCDqlcrA6YuKWLk2dCufd6QhE26YkqsE',
             alt: 'Identity management',
         },
         'item-4': {
-            image: '/payments.png',
+            image: 'https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/Logo_white.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvTG9nb193aGl0ZS5wbmciLCJpYXQiOjE3NTUzNjgzMjEsImV4cCI6MTc4NjkwNDMyMX0.yl0N6ziDDeU7JeFEoEL0c-WzvmwQHVwfLhQ4gbFaVgE',
             alt: 'Analytics dashboard',
         },
     }
+
+    const items = [
+        { value: 'item-1',
+        label: '¿Qué es el Mini Boulder Pared Aventura?',
+        content: 'En Pared Aventura ofrecemos paneles y tomas de escalada para niños y niñas, listos para colocar en casa, guardería o escuela.',
+        svg: <Database className="size-4" />
+        },
+        { value: 'item-2',
+        label: '¿Por qué jugar a escalar?',
+        content: 'La escalada no es solo un juego: es una experiencia integral que estimula el desarrollo físico, cognitivo y emocional de los niños y niñas.',
+        svg: <Fingerprint className="size-4" />
+        },
+        { value: 'item-3',
+        label: '¿Por qué usamos stickers?',
+        content: 'Desde la psicología infantil, el refuerzo positivo es una de las formas más efectivas de motivar conductas saludables y reforzar aprendizajes. Cada vez que un niño o niña completa un recorrido, inventa un camino nuevo, se anima a intentarlo de nuevo o simplemente se esfuerza.',
+        svg: <IdCard className="size-4" />
+        },
+        { value: 'item-4',
+        label: 'Nuestros Kits',
+        content: 'Podés elegir entre dos opciones de kits, la diferencia entre ellos radica en la cantidad de paneles y tomas de escalada. Ambos kits están diseñados para adaptarse a las necesidades de los niños y niñas, fomentando su desarrollo y diversión.',
+        svg: <ChartBarIncreasingIcon className="size-4" />
+        },
+    ]
 
     return (
         <section className="py-12 md:py-20 lg:py-32">
             <div className="bg-linear-to-b absolute inset-0 -z-10 sm:inset-6 sm:rounded-b-3xl dark:block dark:to-[color-mix(in_oklab,var(--color-zinc-900)_75%,var(--color-background))]"></div>
             <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
                 <div className="relative z-10 mx-auto max-w-2xl space-y-6 text-center">
-                    <h2 className="text-balance text-4xl font-semibold lg:text-6xl">The foundation for AI</h2>
-                    <p>Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</p>
+                    <h2 className="text-balance text-4xl font-semibold lg:text-6xl">¿Por qué escalar?</h2>
+                    <p>La escalada no es solo un juego: es una experiencia integral que estimula el desarrollo físico, cognitivo y emocional de los niños y niñas.</p>
                 </div>
 
-                <div className="grid gap-12 sm:px-12 md:grid-cols-2 lg:gap-20 lg:px-0">
+                <div className="grid gap-12 sm:px-20 md:grid-cols-2 lg:gap-20 lg:px-0">
                     <Accordion
                         type="single"
                         value={activeItem}
                         onValueChange={(value) => setActiveItem(value as ImageKey)}
                         className="w-full">
-                        <AccordionItem value="item-1">
-                            <AccordionTrigger>
+                        {items.map((item) => (
+                            <AccordionItem key={item.value} value={item.value}><AccordionTrigger>
                                 <div className="flex items-center gap-2 text-base">
-                                    <Database className="size-4" />
-                                    Database Visualization
+                                    {item.svg}
+                                    {item.label}
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="item-2">
-                            <AccordionTrigger>
-                                <div className="flex items-center gap-2 text-base">
-                                    <Fingerprint className="size-4" />
-                                    Advanced Authentication
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent>Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="item-3">
-                            <AccordionTrigger>
-                                <div className="flex items-center gap-2 text-base">
-                                    <IdCard className="size-4" />
-                                    Identity Management
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent>Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="item-4">
-                            <AccordionTrigger>
-                                <div className="flex items-center gap-2 text-base">
-                                    <ChartBarIncreasingIcon className="size-4" />
-                                    Analytics Dashboard
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent>Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</AccordionContent>
-                        </AccordionItem>
+                            <AccordionContent>{item.content}</AccordionContent></AccordionItem>
+                                ))}
                     </Accordion>
 
-                    <div className="bg-background relative flex overflow-hidden rounded-3xl border p-2">
-                        <div className="w-15 absolute inset-0 right-0 ml-auto border-l bg-[repeating-linear-gradient(-45deg,var(--color-border),var(--color-border)_1px,transparent_1px,transparent_8px)]"></div>
-                        <div className="aspect-76/59 bg-background relative w-[calc(3/4*100%+3rem)] rounded-2xl">
+                    <div className="bg-background relative flex overflow-hidden rounded-2xl border p-3">
+                        <div className="w-10 absolute inset-0 right-0 ml-auto border-l bg-[repeating-linear-gradient(-45deg,var(--color-border),var(--color-border)_1px,transparent_1px,transparent_8px)]"></div>
+                        <div className="aspect-180/220 bg-background relative w-[calc(3/4*100%+5rem)] rounded-2xl">
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={`${activeItem}-id`}
@@ -98,14 +94,14 @@ export default function Features() {
                                         className="size-full object-cover object-left-top dark:mix-blend-lighten"
                                         alt={images[activeItem].alt}
                                         width={1207}
-                                        height={929}
+                                        height={1200}
                                     />
                                 </motion.div>
                             </AnimatePresence>
                         </div>
                         <BorderBeam
                             duration={6}
-                            size={200}
+                            size={400}
                             className="from-transparent via-yellow-700 to-transparent dark:via-white/50"
                         />
                     </div>

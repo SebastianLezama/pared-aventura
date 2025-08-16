@@ -4,6 +4,7 @@ import Features from "@/components/features-12";
 import FooterSection from "@/components/footer";
 import { HeroHeader } from "@/components/header";
 import HeroSection from "@/components/hero-section";
+import Pricing from "@/components/pricing";
 import Image from "next/image";
 
 export default function Home() {
@@ -12,9 +13,9 @@ export default function Home() {
     <HeroHeader />
     <HeroSection />
     <Features />
-    <CallToAction />
+    <Pricing />
     {/* <ContentSection /> */}
-    <FooterSection />
+    {/* <FooterSection /> */}
     </>
   );
 }
