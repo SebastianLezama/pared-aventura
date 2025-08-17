@@ -143,3 +143,12 @@ export const LogoStroke = ({ className }: { className?: string }) => {
         </svg>
     )
 }
+export const LogoString = ({ className }: { className?: string }) => {
+    return (
+        <div className="grid items-center space-x-2 ">
+            <span className="text-sm font-script ">Mini Boulder</span>
+
+            <span className="text-lg mt-0 font-casual lg:inline-block">Pared Aventura</span>
+        </div>
+    )
+}

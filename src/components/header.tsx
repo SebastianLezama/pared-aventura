@@ -7,6 +7,7 @@ import React from 'react'
 import { cn } from '@/lib/utils'
 import { ModeToggle } from './dark-mode'
 import { usePathname } from 'next/navigation'
+import path from 'path'
 
 const menuItems = [
     { name: 'Info', href: '#info' },
@@ -27,7 +28,7 @@ export const HeroHeader = () => {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
     return (
-        <header>
+        <header className={cn(pathname === '/login' && 'hidden' || pathname === '/signup' && 'hidden')} >
             <nav
                 data-state={menuState && 'active'}
                 className="fixed z-20 w-full px-2">
@@ -95,7 +96,7 @@ export const HeroHeader = () => {
                                     variant="outline"
                                     size="sm"
                                     className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#">
+                                    <Link href="/login">
                                         <span>Login</span>
                                     </Link>
                                 </Button>
@@ -104,7 +105,7 @@ export const HeroHeader = () => {
                                     size="sm"
                                     className={cn(isScrolled && 'lg:hidden')}>
                                     <Link href="#">
-                                        <span>Sign Up</span>
+                                        <span>Registrarse</span>
                                     </Link>
                                 </Button>
                                 <Button
@@ -112,7 +113,7 @@ export const HeroHeader = () => {
                                     size="sm"
                                     className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
                                     <Link href="#">
-                                        <span>Get Started</span>
+                                        <span>Empecemos</span>
                                     </Link>
                                 </Button>
                             </div>

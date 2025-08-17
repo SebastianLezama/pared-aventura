@@ -1,5 +1,8 @@
+'use client'
 import { Logo } from '@/components/logo'
+import { cn } from '@/lib/utils'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const links = [
     {
@@ -73,8 +76,9 @@ const links = [
 ]
 
 export default function FooterSection() {
+    const pathname = usePathname()
     return (
-        <footer className="border-b pt-20 dark:bg-transparent">
+        <footer className={cn(pathname === '/login'  && 'hidden' || pathname === '/signup' && 'hidden' || "border-b pt-20 dark:bg-transparent")}>
             <div className="mx-auto max-w-6xl px-6">
                 <div className="grid gap-10 md:grid-cols-5">
                     <div className="flex md:col-span-2">
