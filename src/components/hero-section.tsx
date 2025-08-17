@@ -42,44 +42,11 @@ export default function HeroSection() {
                 </div>
                 <section>
                     <div className="relative pt-24 md:pt-36">
-                        <AnimatedGroup
-                            variants={{
-                                container: {
-                                    visible: {
-                                        transition: {
-                                            delayChildren: 1,
-                                        },
-                                    },
-                                },
-                                item: {
-                                    hidden: {
-                                        opacity: 0,
-                                        y: 20,
-                                    },
-                                    visible: {
-                                        opacity: 1,
-                                        y: 0,
-                                        transition: {
-                                            type: 'spring',
-                                            bounce: 0.3,
-                                            duration: 2,
-                                        },
-                                    },
-                                },
-                            }}
-                            className="absolute inset-0 -z-20">
-                            <Image
-                                src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
-                                alt="background"
-                                className="absolute inset-x-0 top-56 -z-20 hidden lg:top-32 dark:block"
-                                width="3276"
-                                height="4095"
-                            />
-                        </AnimatedGroup>
-                        <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
+                        
+                        <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_80%_100%,transparent_0%,var(--color-background)_45%)]"></div>
                         <div className="mx-auto max-w-7xl px-6">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-                                <AnimatedGroup variants={transitionVariants}>
+                                {/* <AnimatedGroup variants={transitionVariants}>
                                     <Link
                                         href="#link"
                                         className="hover:bg-primary dark:hover:border-t-border group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
@@ -97,36 +64,37 @@ export default function HeroSection() {
                                             </div>
                                         </div>
                                     </Link>
-                                </AnimatedGroup>
+                                </AnimatedGroup> */}
 
-                                <TextEffect
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    as="h1"
-                                    className="mt-8 text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-script">
-                                    Mini Boulder
-                                </TextEffect>
-                                <AnimatedGroup  variants={transitionVariants}>
-                                    <div className="mt-12 flex items-center justify-center gap-2">
-                                <Logo className='size-120'/>
-                                </div>
-                                </AnimatedGroup>
-                                <TextEffect
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    as="h1"
-                                    className="mt-4 text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-casual">
-                                    Pared Aventura
-                                </TextEffect>
-                                <TextEffect
-                                    per="line"
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    delay={0.5}
-                                    as="p"
-                                    className="mx-auto mt-8 max-w-2xl text-balance text-xl font-script">
-                                    Para desafiarse jugando
-                                </TextEffect>
+                                    <AnimatedGroup  variants={transitionVariants} className='mt-8 grid  items-center justify-center justify-items-center gap-2 md:flex md:flex-row' >
+                                        <Logo className='justify-items-center xl:size-80 size-60'/>
+                                        <div className="mt-0 grid items-center justify-center gap-2">
+                                            <TextEffect
+                                                preset="fade-in-blur"
+                                                speedSegment={0.3}
+                                                as="h1"
+                                                className="mt-0 text-balance text-6xl md:text-5xl xl:text-[5.25rem] font-script">
+                                                Mini Boulder
+                                            </TextEffect>
+                                    {/* <Logo className='size-120'/> */}
+                                    <TextEffect
+                                        preset="fade-in-blur"
+                                        speedSegment={0.3}
+                                        as="h1"
+                                        className="mt-4 text-balance text-6xl md:text-5xl lg:mt-8 xl:text-[4.25rem] font-casual">
+                                        Pared Aventura
+                                    </TextEffect>
+                                    </div>
+                                    </AnimatedGroup>
+                                    <TextEffect
+                                        per="line"
+                                        preset="fade-in-blur"
+                                        speedSegment={0.3}
+                                        delay={0.5}
+                                        as="p"
+                                        className="mx-auto max-w-2xl text-balance text-3xl font-script">
+                                        Para desafiarse jugando
+                                    </TextEffect>
 
                                 <AnimatedGroup
                                     variants={{
@@ -181,25 +149,25 @@ export default function HeroSection() {
                                 },
                                 ...transitionVariants,
                             }}>
-                            <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
+                            <div className="relative mt-8 overflow-hidden px-2  sm:mt-12 md:mt-20">
                                 <div
                                     aria-hidden
                                     className="to-background absolute inset-0 z-10 from-transparent from-35%"
                                 />
                                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                     <Image
-                                        className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-                                        src="https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/base_holds_new_01.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvYmFzZV9ob2xkc19uZXdfMDEuanBnIiwiaWF0IjoxNzU1MzUzNjAyLCJleHAiOjE3ODY4ODk2MDJ9.cmqol4hjLmV7fyYPkpwXEr6HcMOR3wq-xTiPMhQXRwI"
+                                        className="bg-background relative hidden rounded-2xl dark:block"
+                                        src="https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/4_paneles_kids.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvNF9wYW5lbGVzX2tpZHMucG5nIiwiaWF0IjoxNzU1MzgxMDUyLCJleHAiOjE3ODY5MTcwNTJ9.s_4_gv-Sld6pUIXbSf137hV-3a4wANfL3Z6p5YlQv8s"
                                         alt="app screen"
-                                        width="2700"
-                                        height="1440"
+                                        width="1536"
+                                        height="1024"
                                     />
                                     <Image
-                                        className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
-                                        src="https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/base_holds_new_01.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvYmFzZV9ob2xkc19uZXdfMDEuanBnIiwiaWF0IjoxNzU1MzUzNjAyLCJleHAiOjE3ODY4ODk2MDJ9.cmqol4hjLmV7fyYPkpwXEr6HcMOR3wq-xTiPMhQXRwI"
+                                        className="z-2 border-border/25 relative rounded-2xl border dark:hidden"
+                                        src="https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/4_paneles_kids.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvNF9wYW5lbGVzX2tpZHMucG5nIiwiaWF0IjoxNzU1MzgxMDUyLCJleHAiOjE3ODY5MTcwNTJ9.s_4_gv-Sld6pUIXbSf137hV-3a4wANfL3Z6p5YlQv8s"
                                         alt="app screen"
-                                        width="2700"
-                                        height="1440"
+                                        width="1536"
+                                        height="1024"
                                     />
                                 </div>
                             </div>

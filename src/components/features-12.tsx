@@ -16,7 +16,7 @@ export default function Features() {
             alt: 'Database visualization',
         },
         'item-2': {
-            image: 'https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/42350af3-31ba-4ec5-9f71-d354a4e50ff0.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvNDIzNTBhZjMtMzFiYS00ZWM1LTlmNzEtZDM1NGE0ZTUwZmYwLnBuZyIsImlhdCI6MTc1NTM1NDQ4OSwiZXhwIjoxNzg2ODkwNDg5fQ.TLSd3L577yaxjfyWq3-ZRXUNAZ7bBsvHgMijjzw7lUs',
+            image: 'https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/dibujo_6.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvZGlidWpvXzYucG5nIiwiaWF0IjoxNzU1MzgxMzQ5LCJleHAiOjE3ODY5MTczNDl9.Wl_pR4mbX4PluEG7OjI8cjWEfBwexIcKk7uCx-MwOHo',
             alt: 'Security authentication',
         },
         'item-3': {
@@ -24,7 +24,7 @@ export default function Features() {
             alt: 'Identity management',
         },
         'item-4': {
-            image: 'https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/Logo_white.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvTG9nb193aGl0ZS5wbmciLCJpYXQiOjE3NTUzNjgzMjEsImV4cCI6MTc4NjkwNDMyMX0.yl0N6ziDDeU7JeFEoEL0c-WzvmwQHVwfLhQ4gbFaVgE',
+            image: 'https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/4_paneles.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvNF9wYW5lbGVzLnBuZyIsImlhdCI6MTc1NTM4MTQxNCwiZXhwIjoxNzg2OTE3NDE0fQ.buqKGs1uL4CmDzZPh1GodyjaKlg3RNUQftxmEHpXJl4',
             alt: 'Analytics dashboard',
         },
     }
@@ -36,13 +36,31 @@ export default function Features() {
         svg: <Database className="size-4" />
         },
         { value: 'item-2',
-        label: '¿Por qué jugar a escalar?',
-        content: 'La escalada no es solo un juego: es una experiencia integral que estimula el desarrollo físico, cognitivo y emocional de los niños y niñas.',
+        label: 'Beneficios de la escalada',
+        content: <span>
+
+        A nivel físico, cada movimiento implica un trabajo coordinado de fuerza, equilibrio y flexibilidad. Al escalar, se fortalece la musculatura, se estimula el desarrollo óseo y se mejora la coordinación motriz. También se potencia la conciencia corporal y se fortalece el sistema propioceptivo y vestibular, fundamentales para el control del cuerpo en el espacio.
+        <p>
+
+        En el plano cognitivo, la escalada es un ejercicio constante de atención, concentración y resolución de problemas. Cada recorrido es un reto que requiere planificación, pensamiento lógico y creatividad para encontrar el mejor camino. Los niños aprenden a evaluar opciones, adaptarse a cambios inesperados y pensar estratégicamente mientras juegan.
+        </p>
+        <p>
+        En lo emocional, escalar favorece la autoconfianza a través de los logros alcanzados y fomenta la tolerancia a la frustración, al aprender que equivocarse y volver a intentarlo es parte natural del proceso. Además, es una vía saludable para canalizar energía, liberar tensiones y regular las emociones
+        </p>
+        </span>,
         svg: <Fingerprint className="size-4" />
         },
         { value: 'item-3',
         label: '¿Por qué usamos stickers?',
-        content: 'Desde la psicología infantil, el refuerzo positivo es una de las formas más efectivas de motivar conductas saludables y reforzar aprendizajes. Cada vez que un niño o niña completa un recorrido, inventa un camino nuevo, se anima a intentarlo de nuevo o simplemente se esfuerza.',
+        content: <span>
+
+        Desde la psicología infantil, el refuerzo positivo es una de las formas más efectivas de motivar conductas saludables y reforzar aprendizajes. Cada vez que un niño o niña completa un recorrido, inventa un camino nuevo, se anima a intentarlo de nuevo o simplemente se esfuerza.
+        <p>
+            ¡Puede elegir un sticker y pegarlo en su panel de escalada como una medalla simbólica!
+        </p>
+        Esto reafirma su confianza, aumenta su motivación, le permite visualizar sus avances y convierte el juego en una experiencia significativa y positiva.
+
+        </span>,
         svg: <IdCard className="size-4" />
         },
         { value: 'item-4',
@@ -53,11 +71,11 @@ export default function Features() {
     ]
 
     return (
-        <section className="py-12 md:py-20 lg:py-32">
+        <section id='info' className="py-12 md:py-20 lg:py-32">
             <div className="bg-linear-to-b absolute inset-0 -z-10 sm:inset-6 sm:rounded-b-3xl dark:block dark:to-[color-mix(in_oklab,var(--color-zinc-900)_75%,var(--color-background))]"></div>
             <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
                 <div className="relative z-10 mx-auto max-w-2xl space-y-6 text-center">
-                    <h2 className="text-balance text-4xl font-semibold lg:text-6xl">¿Por qué escalar?</h2>
+                    <h2 className="text-balance text-4xl font-semibold lg:text-6xl">¿Por qué jugar a escalar?</h2>
                     <p>La escalada no es solo un juego: es una experiencia integral que estimula el desarrollo físico, cognitivo y emocional de los niños y niñas.</p>
                 </div>
 
@@ -74,7 +92,8 @@ export default function Features() {
                                     {item.label}
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>{item.content}</AccordionContent></AccordionItem>
+                            <AccordionContent>{item.content}</AccordionContent>
+                        </AccordionItem>
                                 ))}
                     </Accordion>
 

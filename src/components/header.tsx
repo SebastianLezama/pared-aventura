@@ -9,9 +9,8 @@ import { ModeToggle } from './dark-mode'
 import { usePathname } from 'next/navigation'
 
 const menuItems = [
-    { name: 'Features', href: '#link' },
-    { name: 'Solution', href: '#link' },
-    { name: 'Pricing', href: '#link' },
+    { name: 'Info', href: '#info' },
+    { name: 'Productos', href: '#products' },
     { name: 'Sobre Nosotros', href: '/about' },
 ]
 

@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function ContentSection() {
     return (
         <section className="flex py-16 md:py-32 justify-center h-full">
-            <div className="mx-auto mt-16 max-w-5xl justify-center justify-items-center space-y-8 px-6 md:space-y-16">
+            <div className="mx-auto mt-16 max-w-8xl justify-center justify-items-center space-y-8 px-6 md:space-y-16">
                 <h2 className="justify-center justify-items-center z-10 max-w-xl text-4xl font-medium lg:text-5xl">Conocenos!</h2>
                 <div className="justify-center md:flex md:gap-12 lg:gap-20">
                     <div className="z-10 space-y-4 md:w-1/2 justify-items-center">
@@ -33,13 +33,13 @@ export default function ContentSection() {
                                 <p className="text-muted-foreground text-sm">Desarrollador</p>
                             </div>
                         </div>
-                    </div>
-                    <div className="mt-12 h-fit md:absolute md:-inset-y-12 md:inset-x-0 md:mt-0">
-                        <div aria-hidden className="bg-linear-to-l z-1 to-background absolute inset-0 hidden from-transparent to-55% md:block"></div>
+                    <div className="mt-12 h-fit md:-inset-y-12 md:inset-x-0 md:mt-0 px-20">
+                        <div aria-hidden className=" z-1 to-background absolute inset-0 hidden px-20  md:block"></div>
                         <div className="border-border/50 relative rounded-2xl border border-dotted p-2">
-                            <Image src="/charts.png" className="hidden rounded-[12px] dark:block" alt="payments illustration dark" width={1207} height={929} />
-                            {/* <Image src="/charts-light.png" className="rounded-[12px] shadow dark:hidden" alt="payments illustration light" width={1207} height={929} /> */}
+                            <Image src="https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/about.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvYWJvdXQucG5nIiwiaWF0IjoxNzU1MzgwNDg0LCJleHAiOjE3ODY5MTY0ODR9.6OjOWzo76L_urptkb7KN4winAcWeJ-61JDD3xbvMAFs" className="hidden rounded-[12px] dark:block" alt="payments illustration dark" width={1207} height={929} />
+                            <Image src="https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/about.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvYWJvdXQucG5nIiwiaWF0IjoxNzU1MzgwNDg0LCJleHAiOjE3ODY5MTY0ODR9.6OjOWzo76L_urptkb7KN4winAcWeJ-61JDD3xbvMAFs" className="rounded-[12px] shadow dark:hidden" alt="payments illustration light" width={800} height={600} />
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

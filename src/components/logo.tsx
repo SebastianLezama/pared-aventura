@@ -2,6 +2,7 @@ import { cn } from '../lib/utils'
 
 export const Logo = ({ className, uniColor }: { className?: string; uniColor?: boolean }) => {
     return (
+        <>
         <svg
         className={cn('size-13', className)}
         width="210mm"
@@ -81,6 +82,16 @@ export const Logo = ({ className, uniColor }: { className?: string; uniColor?: b
             strokeWidth="0"
             d="m 347.75,674.5 c 6.5,3.31 12.67,7.13 18.81,11.06 0.84,0.53 1.67,1.06 2.53,1.61 7.56,4.96 15.27,10.79 17.91,19.83 1.23,5.58 1.96,9.99 -1.71,13.66 -2.38,1.47 -3.05,2.12 -6.29,3.34 -4.72,1.06 -8.21,1.8 -12.06,1.8 -15.06,0.91 -23.68,-3.67 -38.72,-12.4 -19.84,-13.12 -27.37,-19.65 -29.75,-32.19 -0.25,-4.62 -0.08,-8.13 2.84,-11.83 11.78,-10.41 34.38,-0.73 46.44,5.12 z" />
             </g></g></svg>
+            {/* <div className="flex md:col-span-2">
+                        
+                <Logo />
+                <div className="grid  px-2 items-center space-x-2">
+                        <span className="text-sm font-script ">Mini Boulder</span>
+
+                        <span className="text-lg mt-0 font-casual lg:inline-block">Pared Aventura</span>
+                    </div>
+            </div> */}
+            </>
     )
 }
 
