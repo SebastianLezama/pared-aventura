@@ -7,7 +7,9 @@ export function PasswordHasher(password: string, salt: string) {
       if (err) {
         return reject(err);
       }
-      resolve(hash.toString('hex'));
+      resolve(hash.toString('hex'))
+
+      
     
   
     })
