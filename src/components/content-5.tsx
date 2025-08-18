@@ -9,11 +9,11 @@ export type CerroKey = 'champaqui' | 'aconcagua'
 type PageProps = Promise< {id: CerroKey}>
 
 
-export default async function ContentProduct(props: {params: PageProps}) {
+export default function ContentProduct(props: {params: PageProps}) {
 
     const { id } = use(props.params)
     const cerro = id;
-    
+
     type ProductLabel = { label: string; img: string; img2: string; tomas: number; paneles: number; colors: number; age: string }
 
 
