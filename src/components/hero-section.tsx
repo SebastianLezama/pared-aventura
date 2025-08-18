@@ -6,6 +6,7 @@ import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { HeroHeader } from './header'
 import { Logo } from './logo'
+import OneTapComponent from './oneTap'
 
 const transitionVariants = {
     item: {
@@ -31,6 +32,8 @@ export default function HeroSection() {
     return (
         <>
             {/* <HeroHeader /> */}
+            <OneTapComponent />
+            
             <main className="overflow-hidden">
                 <div
                     aria-hidden

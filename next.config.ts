@@ -15,6 +15,32 @@ const nextConfig: NextConfig = {
       }
     ],
   },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "access-control-allow-origin",
+            value: "*",
+          },
+          {
+            key: "access-control-allow-credentials",
+            value: "true",
+          },
+          {
+            key: "access-control-allow-headers",
+            value: "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-Token",
+          },
+          {
+            key: "access-control-allow-methods",
+            value: "GET, POST, PUT, DELETE, OPTIONS",
+          },
+
+        ],
+      },
+    ];
+  }
 };
 
 export default nextConfig;

@@ -6,8 +6,8 @@ import { cn } from '@/lib/utils'
 import Link from 'next/link'
 
 export default function SignUp({
-  className,
-  ...props
+    className,
+    ...props
 }: React.ComponentProps<"div">) {
     return (
         <section className={cn("flex bg-background px-4  dark:bg-transparent", className)} {...props}>

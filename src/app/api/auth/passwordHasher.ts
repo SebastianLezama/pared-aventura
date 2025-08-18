@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 
-export function PasswordHasher(password: string, salt: string) {
+export function PasswordHasher(password: string, salt: string): Promise<String> {
 
   return new Promise((resolve, reject) => {
     crypto.scrypt(password.normalize(), salt, 64, (err, hash) => {
@@ -9,7 +9,9 @@ export function PasswordHasher(password: string, salt: string) {
       }
       resolve(hash.toString('hex'))
 
-      
+      const number = {
+
+      }
     
   
     })

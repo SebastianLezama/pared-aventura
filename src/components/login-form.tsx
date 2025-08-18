@@ -10,11 +10,17 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Link from "next/link"
+import OneTapComponent from "./oneTap"
+import { SupabaseAuthClient } from "@supabase/supabase-js/dist/module/lib/SupabaseAuthClient"
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  // const supabase = new SupabaseAuthClient({
+  //   url: process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  //   key: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+  // })
   return (
     <div className={cn("flex flex-col gap-6 min-w-sm ", className)} {...props}>
       <Card>
@@ -28,8 +34,11 @@ export function LoginForm({
           <form>
             <div className="grid gap-6">
               <div className="flex flex-col gap-4">
+                {/* <OneTapComponent/> */}
                 
-                <Button variant="outline" className="w-full bg-card hover:cursor-pointer">
+                <Button variant="outline" className="w-full bg-card hover:cursor-pointer" onSubmit={supabase.signInWithOAuth({
+  provider: 'google',
+})}>
                   <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="0.98em"
