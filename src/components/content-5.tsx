@@ -3,17 +3,17 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button'
 import { Check } from 'lucide-react'
 import Link from 'next/link';
+import { use } from 'react';
 
 export type CerroKey = 'champaqui' | 'aconcagua'
-interface PageProps {
-    params: Promise< {id: CerroKey}>
-}
-
-export default async function ContentProduct(params: { id: CerroKey }) {
+type PageProps = Promise< {id: CerroKey}>
 
 
-    const { id } = await params;
+export default async function ContentProduct(props: {params: PageProps}) {
+
+    const { id } = use(props.params)
     const cerro = id;
+    
     type ProductLabel = { label: string; img: string; img2: string; tomas: number; paneles: number; colors: number; age: string }
 
 
