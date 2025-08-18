@@ -32,7 +32,7 @@ export default function HeroSection() {
     return (
         <>
             {/* <HeroHeader /> */}
-            <OneTapComponent />
+            {/* <OneTapComponent /> */}
             
             <main className="overflow-hidden">
                 <div

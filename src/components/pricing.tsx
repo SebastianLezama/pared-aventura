@@ -24,7 +24,7 @@ export default function Pricing() {
                                 asChild
                                 // variant="outline"
                                 className="mt-4 w-full">
-                                <Link href="">Más Información</Link>
+                                <Link href="/products/champaqui">Más Información</Link>
                             </Button>
                         </CardHeader>
 
@@ -57,7 +57,7 @@ export default function Pricing() {
                             <Button
                                 asChild
                                 className="mt-4 w-full">
-                                <Link href="">Más Información</Link>
+                                <Link href="/products/aconcagua">Más Información</Link>
                             </Button>
                         </CardHeader>
 

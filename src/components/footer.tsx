@@ -10,15 +10,15 @@ const links = [
         items: [
             {
                 title: 'Cerro Aconcagua',
-                href: '#',
+                href: '/products/aconcagua',
             },
             {
                 title: 'Cerro Champaqui',
-                href: '#',
+                href: '/products/champaqui',
             },
             {
                 title: 'Información',
-                href: '#',
+                href: '/#products',
             },
             
         ],

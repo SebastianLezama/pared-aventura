@@ -23,8 +23,6 @@ const OneTapComponent = () => {
   const supabase = createClient()
   const router = useRouter()
 
-  console.log(process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID, 'Google ID')
-
   const initializeGoogleOneTap = async () => {
     console.log('Initializing Google One Tap')
     const [nonce, hashedNonce] = await generateNonce()

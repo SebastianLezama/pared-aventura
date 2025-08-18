@@ -19,6 +19,7 @@ export const HeroHeader = () => {
     const [isScrolled, setIsScrolled] = React.useState(false)
     const pathname = usePathname()
 
+
     React.useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50)
@@ -61,7 +62,7 @@ export const HeroHeader = () => {
                             </button>
                         </div>
 
-                        <div className="absolute inset-0 m-auto hidden size-fit lg:block">
+                        <div className={cn(pathname !== '/' && 'hidden' ||"absolute inset-0 m-auto hidden size-fit lg:block")}>
                             <ul className="flex gap-8 text-md">
                                 {menuItems.map((item, index) => (
                                     <li key={index}>

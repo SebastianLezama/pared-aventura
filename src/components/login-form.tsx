@@ -12,33 +12,26 @@ import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import OneTapComponent from "./oneTap"
 import { SupabaseAuthClient } from "@supabase/supabase-js/dist/module/lib/SupabaseAuthClient"
+import { createClient } from "@/utils/supabase/client"
+
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  // const supabase = new SupabaseAuthClient({
-  //   url: process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  //   key: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-  // })
+    const supabase = createClient()
+  
   return (
     <div className={cn("flex flex-col gap-6 min-w-sm ", className)} {...props}>
       <Card>
         <CardHeader className="text-center">
-          <CardTitle className="text-xl">Bienvenidos</CardTitle>
+          <CardTitle className="text-xl">Bienvenido!</CardTitle>
           <CardDescription>
             Inicie sesión con su cuenta de Google
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
-            <div className="grid gap-6">
-              <div className="flex flex-col gap-4">
-                {/* <OneTapComponent/> */}
-                
-                <Button variant="outline" className="w-full bg-card hover:cursor-pointer" onSubmit={supabase.signInWithOAuth({
-  provider: 'google',
-})}>
+                <Button variant="outline" className="w-full bg-card hover:cursor-pointer" onClick={async () => supabase.auth.signInWithOAuth({provider: 'google'})} >
                   <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="0.98em"
@@ -59,6 +52,11 @@ export function LoginForm({
                             </svg>
                   Iniciar sesión con Google
                 </Button>
+          <form>
+            <div className="grid gap-6">
+              <div className="flex flex-col gap-4">
+                <OneTapComponent/>
+                
               </div>
               <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
                 <span className="bg-card text-muted-foreground relative z-10 px-2">
