@@ -5,12 +5,18 @@ import { Check } from 'lucide-react'
 import Link from 'next/link';
 
 export type CerroKey = 'champaqui' | 'aconcagua'
+interface PageProps {
+    params: Promise< {id: CerroKey}>
+}
 
-export default function ContentProduct(params: { id: CerroKey }) {
+export default async function ContentProduct(params: { id: CerroKey }) {
 
 
-    const cerro: CerroKey = params.id
+    const { id } = await params;
+    const cerro = id;
     type ProductLabel = { label: string; img: string; img2: string; tomas: number; paneles: number; colors: number; age: string }
+
+
     const productLabels: Record<CerroKey, ProductLabel> = {
         champaqui: {label: "Champaquí", img: "https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/Champaqui.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvQ2hhbXBhcXVpLnBuZyIsImlhdCI6MTc1NTU0ODc2MCwiZXhwIjoxNzg3MDg0NzYwfQ.Ut1rURUgFQ4XW0pJAgBRq6jIPW9blUjd4gITYTVO3tM", img2: "https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/real_4paneles_2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvcmVhbF80cGFuZWxlc18yLnBuZyIsImlhdCI6MTc1NTU1MTk5NSwiZXhwIjoxNzg3MDg3OTk1fQ.gDculJhDYs0O1C2A7VEg-n1fXTO-dvD-Z3hwdE7PpkU", tomas: 20, paneles: 4, colors: 5, age: "3 a 6"},
         aconcagua: {label: "Aconcagua", img: "https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/Aconcagua.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvQWNvbmNhZ3VhLnBuZyIsImlhdCI6MTc1NTU0ODc3NSwiZXhwIjoxNzg3MDg0Nzc1fQ.5w819TvgtofvzEZtrhuSAgiISaKC096dWl4KUORTG4w", img2: "https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/dibujo_6.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvZGlidWpvXzYucG5nIiwiaWF0IjoxNzU1NTUzMjExLCJleHAiOjE3ODcwODkyMTF9.Q6dA36i1JzcFvpvDMUkVbWubtnbBfjANENaoWv8iKeE", tomas: 30, paneles: 6, colors: 6, age: "3 a 8"},
