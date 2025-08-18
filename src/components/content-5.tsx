@@ -2,7 +2,6 @@ import { Cpu, Lock, Sparkles, Zap } from 'lucide-react'
 import Image from 'next/image';
 import { Button } from '@/components/ui/button'
 import { Check } from 'lucide-react'
-import ContentProduct2 from './content-1';
 import Link from 'next/link';
 
 export type CerroKey = 'champaqui' | 'aconcagua'

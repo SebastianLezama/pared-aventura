@@ -4,7 +4,7 @@ import Google from "next-auth/providers/google"
 const GOOGLE_CLIENT_SECRET = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET!
 const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!
 
-const { createClient } = require('@/utils/supabase/server')
+import { createClient } from '@/utils/supabase/server'
 
 const authOption: NextAuthOptions = {
   session: {
@@ -21,10 +21,11 @@ const authOption: NextAuthOptions = {
     if (!profile?.email) {
       throw new Error('No profile')
     }
-    await createClient().auth.signInWithIdToken({
+    const supabase = await createClient();
+    await supabase.auth.signInWithIdToken({
       provider: 'google',
       token: account!.id_token!,
-      nonce: account!.nonce!,
+      nonce: typeof account!.nonce === 'string' ? account!.nonce : '',
     })
     return true
   }
