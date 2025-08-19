@@ -121,7 +121,7 @@ export default async function ContentProduct(props: {params: Params}) {
                             </div>
                         </div>
                     </section>
-                    <section className="relative py-16 md:py-32">
+                    {/* <section className="relative py-16 md:py-32">
             <div className="mx-auto max-w-5xl px-6">
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="text-balance text-3xl font-bold md:text-4xl lg:text-5xl">Encargue el kit {product}</h2>
@@ -195,7 +195,7 @@ export default async function ContentProduct(props: {params: Params}) {
                     </div>
                 </div>
             </div>
-        </section>
+        </section> */}
                     
         </main>
     )
