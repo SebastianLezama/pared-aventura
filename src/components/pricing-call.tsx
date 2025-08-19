@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function PricingCall() {
     return (
-        <div className="relative py-16 md:py-32">
+        <section className="relative py-16 md:py-32">
             <div className="mx-auto max-w-5xl px-6">
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="text-balance text-3xl font-bold md:text-4xl lg:text-5xl">Start managing your company smarter today</h2>
@@ -78,6 +78,6 @@ export default function PricingCall() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
