@@ -1,8 +1,8 @@
 import NextAuth, { NextAuthOptions } from "next-auth"
 import Google from "next-auth/providers/google"
 
+const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET!
-const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID!
 
 import { createClient } from '@/utils/supabase/server'
 
