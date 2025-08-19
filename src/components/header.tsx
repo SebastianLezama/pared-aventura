@@ -9,8 +9,8 @@ import { ModeToggle } from './dark-mode'
 import { usePathname } from 'next/navigation'
 
 const menuItems = [
-    { name: 'Info', href: '#info' },
-    { name: 'Productos', href: '#products' },
+    { name: 'Info', href: '/#info' },
+    { name: 'Productos', href: '/#products' },
     { name: 'Sobre Nosotros', href: '/about' },
 ]
 
@@ -62,12 +62,15 @@ export const HeroHeader = () => {
                             </button>
                         </div>
 
-                        <div className={cn(pathname !== '/' && 'hidden' ||"absolute inset-0 m-auto hidden size-fit lg:block")}>
+                        <div className="absolute inset-0 m-auto hidden size-fit lg:block">
                             <ul className="flex gap-8 text-md">
                                 {menuItems.map((item, index) => (
-                                    <li key={index}>
+                                    <li key={index}
+                                    >
                                         <Link
+                                        onClick={() => setMenuState(!menuState)}
                                             href={item.href}
+
                                             className={ cn(pathname === item.href && 'text-accent-foreground' || 'text-muted-foreground hover:text-accent-foreground block, duration-150 ')}>
                                             <span>{item.name}</span>
                                         </Link>

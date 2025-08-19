@@ -5,6 +5,9 @@ import { Check } from 'lucide-react'
 import Link from 'next/link';
 import { use } from 'react';
 import { param } from 'motion/react-client';
+import { Logo } from './logo';
+import { productLabels } from "@/utils/utils";
+
 
 
 export type Params = Promise<{ id: string }>
@@ -19,14 +22,6 @@ export default async function ContentProduct(props: {params: Params}) {
     const cerro = params.id;
     console.log(cerro)
 
-    type ProductLabel = { label: string; img: string; img2: string; tomas: number; paneles: number; colors: number; age: string }
-
-
-    const productLabels: Record<string, ProductLabel> = {
-        champaqui: {label: "Champaquí", img: "https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/Champaqui.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvQ2hhbXBhcXVpLnBuZyIsImlhdCI6MTc1NTU0ODc2MCwiZXhwIjoxNzg3MDg0NzYwfQ.Ut1rURUgFQ4XW0pJAgBRq6jIPW9blUjd4gITYTVO3tM", img2: "https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/real_4paneles_2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvcmVhbF80cGFuZWxlc18yLnBuZyIsImlhdCI6MTc1NTU1MTk5NSwiZXhwIjoxNzg3MDg3OTk1fQ.gDculJhDYs0O1C2A7VEg-n1fXTO-dvD-Z3hwdE7PpkU", tomas: 20, paneles: 4, colors: 5, age: "3 a 6"},
-        aconcagua: {label: "Aconcagua", img: "https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/Aconcagua.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvQWNvbmNhZ3VhLnBuZyIsImlhdCI6MTc1NTU0ODc3NSwiZXhwIjoxNzg3MDg0Nzc1fQ.5w819TvgtofvzEZtrhuSAgiISaKC096dWl4KUORTG4w", img2: "https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/dibujo_6.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvZGlidWpvXzYucG5nIiwiaWF0IjoxNzU1NTUzMjExLCJleHAiOjE3ODcwODkyMTF9.Q6dA36i1JzcFvpvDMUkVbWubtnbBfjANENaoWv8iKeE", tomas: 30, paneles: 6, colors: 6, age: "3 a 8"},
-    }
-
     const product = productLabels[cerro].label
     const productImg = productLabels[cerro].img
     const productImg2 = productLabels[cerro].img2
@@ -34,6 +29,9 @@ export default async function ContentProduct(props: {params: Params}) {
     const productPaneles = productLabels[cerro].paneles
     const productColors = productLabels[cerro].colors
     const productAge = productLabels[cerro].age
+    const productPrice = productLabels[cerro].price
+
+    const productDesc = [`${productPaneles} paneles de madera terciada`, `${productTomas} tomas de escalada`, `${productColors} colores de tomas para armar las rutas`, `${productColors} colores de tomas para armar las rutas`, `Para niños y niñas de entre ${productAge} años` ]
 
     return (
         <main className="py-16 md:py-32">
@@ -54,15 +52,14 @@ export default async function ContentProduct(props: {params: Params}) {
                             <Zap className="size-4" />
                             <h3 className="text-sm font-medium">Diseño</h3>
                         </div>
-                        <p className="text-muted-foreground text-sm">{productPaneles} paneles hexagonales de 60cm hechos en madera terciada agujereados listos para colocar.
-</p>
+                        <p className="text-muted-foreground text-sm">{productPaneles} paneles hexagonales de 60cm hechos en madera terciada listos para colocar. Con agujeros para colocar las tomas de escalada en varias posiciones.</p>
                     </div>
                     <div className="space-y-2">
                         <div className="flex items-center gap-2">
                             <Cpu className="size-4" />
                             <h3 className="text-sm font-medium">Versatilidad</h3>
                         </div>
-                        <p className="text-muted-foreground text-sm">{productTomas} tomas de escalada de {productColors} colores para posicionar en los paneles y armar tus rutas.</p>
+                        <p className="text-muted-foreground text-sm">{productTomas} tomas de escalada de {productColors} colores para posicionar en los paneles como vos quieras y armar tus rutas según el color.</p>
                     </div>
                     <div className="space-y-2">
                         <div className="flex items-center gap-2">
@@ -93,12 +90,14 @@ export default async function ContentProduct(props: {params: Params}) {
             
                                 <div className="relative space-y-4">
                                     <p className="text-muted-foreground">
-                                        Los kits de Pared Aventura están diseñados para fomentar la actividad física y el juego sin pantallas en los niños y niñas. 
-                                        <span className="text-accent-foreground font-bold">Es una excelente manera de promover la escalada segura y divertida.</span> 
+                                        Los kits de Pared Aventura están diseñados para fomentar la actividad física y el juego sin pantallas para los niños y niñas.
+                                        <br/>
+                                        <br/>
+                                        <span className="text-accent-foreground font-bold"> Es una excelente manera de promover la escalada segura y divertida.</span> 
                                     </p>
                                     <p className="text-muted-foreground">Tené en cuenta que en escalada deportiva el
                                     propósito en la elección de los colores de las
-                                    tomas, tiene la siguiente lógica: uno debe escalar
+                                    tomas tiene la siguiente lógica: uno debe escalar
                                     sujeto de las tomas de un mismo color, cualquiera sea. Para
                                     niños, la colocación de los pies es libre.</p>
             
@@ -121,36 +120,36 @@ export default async function ContentProduct(props: {params: Params}) {
                             </div>
                         </div>
                     </section>
-                    {/* <section className="relative py-16 md:py-32">
+                    <section className="relative py-16 md:py-32">
             <div className="mx-auto max-w-5xl px-6">
                 <div className="mx-auto max-w-2xl text-center">
-                    <h2 className="text-balance text-3xl font-bold md:text-4xl lg:text-5xl">Encargue el kit {product}</h2>
+                    <h2 className="text-balance text-3xl font-bold md:text-4xl lg:text-3xl">Kit Cerro {product}</h2>
                 </div>
                 <div className="mt-8 md:mt-20">
                     <div className="bg-card relative rounded-3xl border shadow-2xl shadow-zinc-950/5">
                         <div className="grid items-center gap-12 divide-y p-12 md:grid-cols-2 md:divide-x md:divide-y-0">
                             <div className="pb-12 text-center md:pb-0 md:pr-12">
-                                <h3 className="text-2xl font-semibold">Suite Enterprise</h3>
-                                <p className="mt-2 text-lg">For your company of any size</p>
+                                <h3 className="text-2xl font-semibold">Kit de instalacion</h3>
+                                <p className="mt-2 text-lg">Listo para amurar y armar</p>
                                 <span className="mb-6 mt-12 inline-block text-6xl font-bold">
-                                    <span className="text-4xl">$</span>234
+                                    <span className="text-4xl">$</span>{productPrice}
                                 </span>
 
                                 <div className="flex justify-center">
                                     <Button
                                         asChild
                                         size="lg">
-                                        <Link href="#">Get started</Link>
+                                        <Link href={`/products/${cerro}/payment`}>Empecemos</Link>
                                     </Button>
                                 </div>
 
-                                <p className="text-muted-foreground mt-12 text-sm">Includes : Security, Unlimited Storage, Payment, Search engine, and all features</p>
+                                <p className="text-muted-foreground mt-12 my-4 text-sm">Incluye: tarugos y tornillos para amurar los paneles y tornillos y arandelas para fijar las tomas</p>
                             </div>
                             <div className="relative">
                                 <ul
                                     role="list"
                                     className="space-y-4">
-                                    {['First premium advantage', 'Second advantage weekly', 'Third advantage donate to project', 'Fourth, access to all components weekly'].map((item, index) => (
+                                    {productDesc.map((item, index) => (
                                         <li
                                             key={index}
                                             className="flex items-center gap-2">
@@ -159,43 +158,21 @@ export default async function ContentProduct(props: {params: Params}) {
                                         </li>
                                     ))}
                                 </ul>
-                                <p className="text-muted-foreground mt-6 text-sm">Team can be any size, and you can add or switch members as needed. Companies using our platform include:</p>
-                                <div className="mt-12 flex flex-wrap items-center justify-between gap-6">
-                                    <img
-                                        className="h-5 w-fit dark:invert"
-                                        src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                                        alt="Nvidia Logo"
-                                        height="20"
-                                        width="auto"
-                                    />
-                                    <img
-                                        className="h-4 w-fit dark:invert"
-                                        src="https://html.tailus.io/blocks/customers/column.svg"
-                                        alt="Column Logo"
-                                        height="16"
-                                        width="auto"
-                                    />
-                                    <img
-                                        className="h-4 w-fit dark:invert"
-                                        src="https://html.tailus.io/blocks/customers/github.svg"
-                                        alt="GitHub Logo"
-                                        height="16"
-                                        width="auto"
-                                    />
-                                    <img
-                                        className="h-5 w-fit dark:invert"
-                                        src="https://html.tailus.io/blocks/customers/nike.svg"
-                                        alt="Nike Logo"
-                                        height="20"
-                                        width="auto"
-                                    />
+                                <p className="text-muted-foreground mt-6 text-sm">Para armar, jugar, aprender y crecer.</p>
+                                <div className="mt-6 flex flex-wrap items-center gap-6">
+                                    <Logo />
+                                    <div className="lg:grid items-center space-x-2 sm:flex-row sm:justify-center">
+                                        <span className="text-sm font-script ">Mini Boulder</span>
+
+                                        <span className="text-lg mt-0 font-casual lg:inline-block">Pared Aventura</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> */}
+        </section>
                     
         </main>
     )

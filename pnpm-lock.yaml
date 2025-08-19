@@ -11,6 +11,9 @@ importers:
       '@hookform/resolvers':
         specifier: ^5.2.1
         version: 5.2.1(react-hook-form@7.62.0(react@19.1.0))
+      '@mercadopago/sdk-react':
+        specifier: ^1.0.4
+        version: 1.0.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-accordion':
         specifier: ^1.2.12
         version: 1.2.12(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -44,6 +47,9 @@ importers:
       lucide-react:
         specifier: ^0.539.0
         version: 0.539.0(react@19.1.0)
+      mercadopago:
+        specifier: ^2.8.0
+        version: 2.8.0
       motion:
         specifier: ^12.23.12
         version: 12.23.12(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -345,6 +351,15 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.30':
     resolution: {integrity: sha512-GQ7Nw5G2lTu/BtHTKfXhKHok2WGetd4XYcVKGx00SjAk8GMwgJM3zr6zORiPGuOE+/vkc90KtTosSSvaCjKb2Q==}
+
+  '@mercadopago/sdk-js@0.0.3':
+    resolution: {integrity: sha512-kO48DNLHdfFAp3on12nuKdqNlEmw1x3+nM6wLd04BdWOXoFcAhkNMQV3AyUIanXdO/bB/dENakdacLT29297EQ==}
+
+  '@mercadopago/sdk-react@1.0.4':
+    resolution: {integrity: sha512-LCRuZxSl092fyGvfuxQwkoRwCmB+GSRH8cLeSWherRtE0D/yOXrky6GZvfoM3weVGVtcqIsO1mTei1QyJmuw+A==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
@@ -1844,6 +1859,9 @@ packages:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
     engines: {node: '>= 0.4'}
 
+  mercadopago@2.8.0:
+    resolution: {integrity: sha512-TInH/yGB1JqWaJv41Ske75ryqsN1ffTPMThSTEpt+sDsFDAG8ecahTLw41Az1VuL0gwa+qOHp9SfTyU27Smwew==}
+
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
@@ -1950,6 +1968,15 @@ packages:
       babel-plugin-react-compiler:
         optional: true
       sass:
+        optional: true
+
+  node-fetch@2.7.0:
+    resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
+    engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
         optional: true
 
   oauth@0.9.15:
@@ -2388,6 +2415,10 @@ packages:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
 
+  uuid@9.0.1:
+    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
+    hasBin: true
+
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
 
@@ -2654,6 +2685,14 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@mercadopago/sdk-js@0.0.3': {}
+
+  '@mercadopago/sdk-react@1.0.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@mercadopago/sdk-js': 0.0.3
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
@@ -4260,6 +4299,13 @@ snapshots:
 
   math-intrinsics@1.1.0: {}
 
+  mercadopago@2.8.0:
+    dependencies:
+      node-fetch: 2.7.0
+      uuid: 9.0.1
+    transitivePeerDependencies:
+      - encoding
+
   merge2@1.4.1: {}
 
   micromatch@4.0.8:
@@ -4349,6 +4395,10 @@ snapshots:
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
+
+  node-fetch@2.7.0:
+    dependencies:
+      whatwg-url: 5.0.0
 
   oauth@0.9.15: {}
 
@@ -4884,6 +4934,8 @@ snapshots:
       '@types/react': 19.1.10
 
   uuid@8.3.2: {}
+
+  uuid@9.0.1: {}
 
   webidl-conversions@3.0.1: {}
 

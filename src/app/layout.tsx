@@ -44,17 +44,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${milksCasual.variable} ${milksScript.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${milksCasual.variable} ${milksScript.variable} antialiased min-h-svh`}
       >
         {/* <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          > */}
+          > */}<div className="flex flex-col min-h-svh">
+
             <HeroHeader />
             {children}
             <FooterSection />
+          </div>
           {/* </ThemeProvider> */}
       </body>
     </html>
