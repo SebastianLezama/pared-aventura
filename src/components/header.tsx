@@ -5,8 +5,11 @@ import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { cn } from '@/lib/utils'
-import { ModeToggle } from './dark-mode'
 import { usePathname } from 'next/navigation'
+import { createSupabaseClient } from '@/utils/supabase/client'
+// import AuthButton from './auth-button'
+// import { signIn, signOut, useSession } from 'next-auth/react'
+import type { User } from '@supabase/supabase-js'
 
 const menuItems = [
     { name: 'Info', href: '/#info' },
@@ -14,10 +17,47 @@ const menuItems = [
     { name: 'Sobre Nosotros', href: '/about' },
 ]
 
-export const HeroHeader = () => {
+
+export const Header = ({ isLoggedIn, user}: {isLoggedIn: Boolean, user: User | null}) => {
     const [menuState, setMenuState] = React.useState(false)
     const [isScrolled, setIsScrolled] = React.useState(false)
     const pathname = usePathname()
+    const supabase = createSupabaseClient()
+
+    
+
+    function AuthButton({ isLoggedIn, user }: { isLoggedIn: Boolean, user: User | null
+    }) {
+        
+        const username = user?.user_metadata.full_name
+
+        if (isLoggedIn) {
+            return (
+                <>
+                    {user && <span>{username}</span>} <br />
+                    <Button
+                        asChild
+                        size="sm"
+                        variant="outline"
+                        className={cn(isScrolled && 'lg:hidden cursor-pointer')}
+                        onClick={()=> supabase.auth.signOut()}
+                    >
+                        <span>Deslogearse</span>
+                    </Button>
+                </>
+            )
+        } else return (
+            <Button
+                asChild
+                size="sm"
+                className={cn(isScrolled && 'lg:hidden')}>
+                <Link href="/login">
+                    <span>Logearse</span>
+                </Link>
+            </Button>
+        )
+    }
+    
 
 
     React.useEffect(() => {
@@ -95,7 +135,7 @@ export const HeroHeader = () => {
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                                 {/* <ModeToggle /> */}
-                                <Button
+                                {/* { !isLoggedIn && <Button
                                     asChild
                                     variant="outline"
                                     size="sm"
@@ -103,15 +143,16 @@ export const HeroHeader = () => {
                                     <Link href="/login">
                                         <span>Login</span>
                                     </Link>
-                                </Button>
-                                <Button
+                                </Button>} */}
+                                <AuthButton isLoggedIn={isLoggedIn} user={user}/>
+                                {/* <Button
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled && 'lg:hidden')}>
                                     <Link href="#">
                                         <span>Registrarse</span>
                                     </Link>
-                                </Button>
+                                </Button> */}
                                 <Button
                                     asChild
                                     size="sm"

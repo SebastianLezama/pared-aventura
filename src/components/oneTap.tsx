@@ -1,7 +1,7 @@
 'use client'
 
 import Script from 'next/script'
-import { createClient } from '@/utils/supabase/client'
+import { createSupabaseClient } from '@/utils/supabase/client'
 import type { accounts, CredentialResponse } from 'google-one-tap'
 import { useRouter } from 'next/navigation'
 
@@ -20,7 +20,7 @@ const generateNonce = async (): Promise<string[]> => {
 }
 
 const OneTapComponent = () => {
-  const supabase = createClient()
+  const supabase = createSupabaseClient()
   const router = useRouter()
 
   const initializeGoogleOneTap = async () => {

@@ -1,3 +1,4 @@
+import { ABOUT } from '@/assets/images'
 import { Cpu, Zap } from 'lucide-react'
 import Image from 'next/image'
 
@@ -36,8 +37,10 @@ export default function ContentSection() {
                     <div className="mt-12 h-fit md:-inset-y-12 md:inset-x-0 md:mt-0 px-20">
                         <div aria-hidden className=" z-1 to-background absolute inset-0 hidden px-20  md:block"></div>
                         <div className="border-border/50 relative rounded-2xl border border-dotted p-2">
-                            <Image src="https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/about.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvYWJvdXQucG5nIiwiaWF0IjoxNzU1MzgwNDg0LCJleHAiOjE3ODY5MTY0ODR9.6OjOWzo76L_urptkb7KN4winAcWeJ-61JDD3xbvMAFs" className="hidden rounded-[12px] dark:block" alt="payments illustration dark" width={1207} height={929} />
-                            <Image src="https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/about.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvYWJvdXQucG5nIiwiaWF0IjoxNzU1MzgwNDg0LCJleHAiOjE3ODY5MTY0ODR9.6OjOWzo76L_urptkb7KN4winAcWeJ-61JDD3xbvMAFs" className="rounded-[12px] shadow dark:hidden" alt="payments illustration light" width={800} height={600} />
+                            <Image src={ABOUT}
+                            className="hidden rounded-[12px] dark:block" alt="payments illustration dark" width={1207} height={929} />
+                            <Image src={ABOUT}
+                            className="rounded-[12px] shadow dark:hidden" alt="payments illustration light" width={800} height={600} />
                         </div>
                     </div>
                     </div>

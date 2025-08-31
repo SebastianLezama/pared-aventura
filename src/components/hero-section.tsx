@@ -4,9 +4,10 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
-import { HeroHeader } from './header'
+import { Header } from './header'
 import { Logo } from './logo'
 import OneTapComponent from './oneTap'
+import { HERO } from '@/assets/images'
 
 const transitionVariants = {
     item: {
@@ -159,14 +160,14 @@ export default function HeroSection() {
                                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                     <Image
                                         className="bg-background relative hidden rounded-2xl dark:block"
-                                        src="https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/4_paneles_kids.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvNF9wYW5lbGVzX2tpZHMucG5nIiwiaWF0IjoxNzU1MzgxMDUyLCJleHAiOjE3ODY5MTcwNTJ9.s_4_gv-Sld6pUIXbSf137hV-3a4wANfL3Z6p5YlQv8s"
+                                        src={HERO}
                                         alt="app screen"
                                         width="1536"
                                         height="1024"
                                     />
                                     <Image
                                         className="z-2 border-border/25 relative rounded-2xl border dark:hidden"
-                                        src="https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/4_paneles_kids.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvNF9wYW5lbGVzX2tpZHMucG5nIiwiaWF0IjoxNzU1MzgxMDUyLCJleHAiOjE3ODY5MTcwNTJ9.s_4_gv-Sld6pUIXbSf137hV-3a4wANfL3Z6p5YlQv8s"
+                                        src={HERO}
                                         alt="app screen"
                                         width="1536"
                                         height="1024"

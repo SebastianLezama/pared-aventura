@@ -29,9 +29,10 @@ const PaymentCard = async (props: {params: Params}) => {
     const productColors = productLabels[id].colors
     const productAge = productLabels[id].age
     const productPrice = productLabels[id].price
+    const torTar = productPaneles * 4
 
     const productDesc = [`${productPaneles} paneles de madera terciada`, `${productTomas} tomas de escalada`, `${productColors} colores de tomas para armar las rutas`, `Stickers adhesivos`, `Para niños y niñas de entre ${productAge} años` ]
-    const productDesc2 = [`${productPaneles} paneles de madera terciada`, `${productTomas} tomas de escalada`, `${productColors} colores de tomas para armar las rutas`, `Stickers adhesivos`, `Para niños y niñas de entre ${productAge} años`, '1 Lave Allen', '16 tarugos de 10mm', '16 tornillos y arandelas para amurar los paneles', `${productTomas} tornillos M6 y arandelas para fijar las tomas` ]
+    const productDesc2 = [`${productPaneles} paneles de madera terciada`, `${productTomas} tomas de escalada`, `${productColors} colores de tomas para armar las rutas`, `Stickers adhesivos`, `Para niños y niñas de entre ${productAge} años`, '1 Lave Allen', `${torTar} tarugos de 10mm`, `${torTar} tornillos y arandelas para amurar los paneles`, `${productTomas} tornillos M6 y arandelas para fijar las tomas` ]
 
   return (
     <form action={add} className="space-y-4">

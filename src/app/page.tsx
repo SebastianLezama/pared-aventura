@@ -1,8 +1,8 @@
 import CallToAction from "@/components/call-to-action";
-import ContentSection from "@/components/content-2";
+import ContentSection from "@/components/about";
 import Features from "@/components/features-12";
 import FooterSection from "@/components/footer";
-import { HeroHeader } from "@/components/header";
+import { Header } from "@/components/header";
 import HeroSection from "@/components/hero-section";
 import Pricing from "@/components/pricing";
 import { createClient } from "@/utils/supabase/server";
@@ -10,23 +10,23 @@ import { createClient } from "@/utils/supabase/server";
 
 export default async function Home() {
 
-  const supabase = createClient()
-  const session = (await supabase).auth.getSession()
+  const supabase = await createClient()
+  const { data: sessionData } = await supabase.auth.getSession()
+  const { data: user } = await supabase.auth.getUser()
+  
+  // const user = sessionData.session?.user.user_metadata.full_name
+  console.log(user.user)
 
-  if (await session) {
-    console.log('User is logged in:', (await session).data.session?.user.email);
-  } else {
-    console.log('No active session found')
+  function isLoggedIn() {
+    return sessionData.session?.user.email !== undefined
   }
 
   return (
     <>
-    <HeroHeader />
+    <Header isLoggedIn={isLoggedIn()} user={user.user}/>
     <HeroSection />
     <Features />
     <Pricing />
-    {/* <ContentSection /> */}
-    {/* <FooterSection /> */}
     </>
   );
 }

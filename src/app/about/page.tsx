@@ -1,4 +1,4 @@
-import ContentSection from "@/components/content-2"
+import ContentSection from "@/components/about"
 
 const page = () => {
   return (
