@@ -119,8 +119,8 @@ export default function HeroSection() {
                                             asChild
                                             size="lg"
                                             className="rounded-xl px-5 text-base">
-                                            <Link href="#link">
-                                                <span className="text-nowrap">Hacer pedido</span>
+                                            <Link href="#info">
+                                                <span className="text-nowrap">Informacion</span>
                                             </Link>
                                         </Button>
                                     </div>
@@ -130,7 +130,7 @@ export default function HeroSection() {
                                         size="lg"
                                         variant="ghost"
                                         className="h-10.5 rounded-xl px-5">
-                                        <Link href="#link">
+                                        <Link href="#products">
                                             <span className="text-nowrap">
                                                 Ver más
                                             </span>

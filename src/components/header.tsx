@@ -144,7 +144,7 @@ export const Header = ({ isLoggedIn, user}: {isLoggedIn: Boolean, user: User | n
                                         <span>Login</span>
                                     </Link>
                                 </Button>} */}
-                                <AuthButton isLoggedIn={isLoggedIn} user={user}/>
+                                {/* <AuthButton isLoggedIn={isLoggedIn} user={user}/> */}
                                 {/* <Button
                                     asChild
                                     size="sm"
@@ -153,14 +153,14 @@ export const Header = ({ isLoggedIn, user}: {isLoggedIn: Boolean, user: User | n
                                         <span>Registrarse</span>
                                     </Link>
                                 </Button> */}
-                                <Button
+                                {/* <Button
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
                                     <Link href="#">
                                         <span>Empecemos</span>
                                     </Link>
-                                </Button>
+                                </Button> */}
                             </div>
                         </div>
                     </div>
