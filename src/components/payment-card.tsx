@@ -7,13 +7,22 @@ import { Params } from "./content-5";
 import { productLabels } from "@/utils/utils";
 import Image from "next/image";
 import MPLogo from "../assets/mp_logo.svg";
+import { createClient } from "@/utils/supabase/server";
+import { UUID } from "node:crypto";
 
 const PaymentCard = async (props: {params: Params}) => {
+
   async function add(formData: FormData) {
     "use server";
+    
+    const user = (await createClient()).auth.getUser()
+    const email = (await user).data.user?.email as string
+    const userId = (await user).data.user?.id as UUID
 
     const message = formData.get("text") as string;
-    const url = await api.message.submit(message);
+    const price = Number(formData.get("price") as string);
+    const order = {email: email, kit: message, price: price, user_id: userId}
+    const url = await api.message.submit(order);
 
     redirect(url);
   }
@@ -43,7 +52,7 @@ const PaymentCard = async (props: {params: Params}) => {
       <div className="mt-8 grid gap-6 md:mt-20 md:grid-cols-5 md:gap-0">
             <div className="rounded-(--radius) flex flex-col justify-between space-y-8 border p-6 md:col-span-2 md:my-2 md:rounded-r-none md:border-r-0 lg:p-10">
                 <div className="space-y-2">
-                        <Image className=" w-full inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1 " src={productImg2} alt="cerro image" height={200} width={300} loading="lazy" />
+                        <Image className=" w-full inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1 " src={productImg2} alt="cerro image" priority height={200} width={300}  />
 
                     
 
@@ -62,12 +71,16 @@ const PaymentCard = async (props: {params: Params}) => {
                           type="hidden"
                           name="text"
                           value={`Kit ${label}` } />
+                      <input
+                          type="hidden"
+                          name="price"
+                          value={ productPrice } />
                       <Button
                           className="w-full cursor-pointer"
                           type="submit"
                           >
                         Pagar con
-                        <Image src={MPLogo} alt="mp" height={80} width={100}/>
+                        <Image className="h-auto" src={MPLogo} alt="mp" height={80} width={100}/>
                       </Button>
                     </div>
 

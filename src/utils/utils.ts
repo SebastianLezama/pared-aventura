@@ -16,3 +16,5 @@ export interface CreateOrder {
   item: string;
   amount: number;
 }
+
+export const HOST = "http://localhost:3000"

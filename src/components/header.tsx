@@ -135,7 +135,7 @@ export const Header = ({ isLoggedIn, user}: {isLoggedIn: Boolean, user: User | n
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                                 {/* <ModeToggle /> */}
-                                {/* { !isLoggedIn && <Button
+                                { !isLoggedIn && <Button
                                     asChild
                                     variant="outline"
                                     size="sm"
@@ -143,24 +143,24 @@ export const Header = ({ isLoggedIn, user}: {isLoggedIn: Boolean, user: User | n
                                     <Link href="/login">
                                         <span>Login</span>
                                     </Link>
-                                </Button>} */}
-                                {/* <AuthButton isLoggedIn={isLoggedIn} user={user}/> */}
-                                {/* <Button
+                                </Button>}
+                                <AuthButton isLoggedIn={isLoggedIn} user={user}/>
+                                <Button
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled && 'lg:hidden')}>
                                     <Link href="#">
                                         <span>Registrarse</span>
                                     </Link>
-                                </Button> */}
-                                {/* <Button
+                                </Button>
+                                <Button
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
                                     <Link href="#">
                                         <span>Empecemos</span>
                                     </Link>
-                                </Button> */}
+                                </Button>
                             </div>
                         </div>
                     </div>
