@@ -161,6 +161,7 @@ export default function HeroSection() {
                                     <Image
                                         className="bg-background relative hidden rounded-2xl dark:block"
                                         src={HERO}
+                                        priority
                                         alt="app screen"
                                         width="1536"
                                         height="1024"
@@ -168,6 +169,7 @@ export default function HeroSection() {
                                     <Image
                                         className="z-2 border-border/25 relative rounded-2xl border dark:hidden"
                                         src={HERO}
+                                        priority
                                         alt="app screen"
                                         width="1536"
                                         height="1024"

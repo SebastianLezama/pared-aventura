@@ -10,20 +10,8 @@ import { createClient } from "@/utils/supabase/server";
 
 export default async function Home() {
 
-  const supabase = await createClient()
-  const { data: sessionData } = await supabase.auth.getSession()
-  const { data: user } = await supabase.auth.getUser()
-  
-  // const user = sessionData.session?.user.user_metadata.full_name
-  console.log(user.user)
-
-  function isLoggedIn() {
-    return sessionData.session?.user.email !== undefined
-  }
-
   return (
     <>
-    <Header isLoggedIn={isLoggedIn()} user={user.user}/>
     <HeroSection />
     <Features />
     <Pricing />

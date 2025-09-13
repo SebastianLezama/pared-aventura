@@ -1,5 +1,5 @@
-
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
+import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -28,3 +28,10 @@ export const createClient = async () => {
     },
   );
 };
+
+// export async function SignOut(path:string):Promise<void> {
+//   const supabase = createClient();
+
+//   (await supabase).auth.signOut()
+//   revalidatePath(path)
+// }

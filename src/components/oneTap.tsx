@@ -3,7 +3,7 @@
 import Script from 'next/script'
 import { createSupabaseClient } from '@/utils/supabase/client'
 import type { accounts, CredentialResponse } from 'google-one-tap'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 declare const google: { accounts: accounts }
 
@@ -22,6 +22,7 @@ const generateNonce = async (): Promise<string[]> => {
 const OneTapComponent = () => {
   const supabase = createSupabaseClient()
   const router = useRouter()
+  const pathname = usePathname()
 
   const initializeGoogleOneTap = async () => {
     console.log('Initializing Google One Tap')
@@ -34,7 +35,7 @@ const OneTapComponent = () => {
       console.error('Error getting session', error)
     }
     if (data.session) {
-      router.push('/')
+      router.push(`/${pathname}`)
       return
     }
 
@@ -55,7 +56,7 @@ const OneTapComponent = () => {
           console.log('Successfully logged in with Google One Tap')
 
           // redirect to protected page
-          router.push('/')
+          router.push(`/${pathname}`)
         } catch (error) {
           console.error('Error logging in with Google One Tap', error)
         }

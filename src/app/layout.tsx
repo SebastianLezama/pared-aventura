@@ -7,6 +7,8 @@ import { Header } from "@/components/header";
 import FooterSection from "@/components/footer";
 import { getServerSession } from "next-auth";
 import SessionProvider from "../utils/session-provider"
+import { createClient } from "@/utils/supabase/server";
+import { revalidatePath } from "next/cache";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

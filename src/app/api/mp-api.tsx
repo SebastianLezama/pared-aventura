@@ -32,6 +32,8 @@ const api = {
       // Devolvemos los datos como un array de objetos
       return data;
     },
+
+
     async add(order: Order): Promise<void> {
       // Obtenemos los mensajes
       const db = await api.message.list();
@@ -47,6 +49,8 @@ const api = {
 
       if (error || !data) throw new Error (error.message || ' Failed to create order.')
     },
+
+
     async submit(order: Order) {
       // Creamos la preferencia incluyendo el precio, titulo y metadata. La información de `items` es standard de Mercado Pago. La información que nosotros necesitamos para nuestra DB debería vivir en `metadata`.
       const preference = await new Preference(mercadopago).create({

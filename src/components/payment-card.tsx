@@ -3,19 +3,28 @@ import { Button } from '@/components/ui/button'
 import { Check } from 'lucide-react'
 import Link from 'next/link'
 import api from "../app/api/mp-api";
-import { Params } from "./content-5";
+import { Params } from "./content-product";
 import { productLabels } from "@/utils/utils";
 import Image from "next/image";
 import MPLogo from "../assets/mp_logo.svg";
 import { createClient } from "@/utils/supabase/server";
 import { UUID } from "node:crypto";
+import { Logo } from "./logo";
 
 const PaymentCard = async (props: {params: Params}) => {
 
   async function add(formData: FormData) {
     "use server";
+
+    const supabase = await createClient()
+
+    // const isAuthenticated = (await supabase.auth.getSession()).data.session?.user ? true : false
+
+    // if (!isAuthenticated) {
+    //   redirect("/login")
+    // }
     
-    const user = (await createClient()).auth.getUser()
+    const user = supabase.auth.getUser()
     const email = (await user).data.user?.email as string
     const userId = (await user).data.user?.id as UUID
 
@@ -44,64 +53,71 @@ const PaymentCard = async (props: {params: Params}) => {
     const productDesc2 = [`${productPaneles} paneles de madera terciada`, `${productTomas} tomas de escalada`, `${productColors} colores de tomas para armar las rutas`, `Stickers adhesivos`, `Para niños y niñas de entre ${productAge} años`, '1 Lave Allen', `${torTar} tarugos de 10mm`, `${torTar} tornillos y arandelas para amurar los paneles`, `${productTomas} tornillos M6 y arandelas para fijar las tomas` ]
 
   return (
-    <form action={add} className="space-y-4">
-      <div className="mx-auto max-w-2xl space-y-6 text-center">
-          <h1 className="text-center text-4xl font-semibold lg:text-5xl">Encargue su kit {label}</h1>
-          <p>Listo para amurar</p>
-      </div>
-      <div className="mt-8 grid gap-6 md:mt-20 md:grid-cols-5 md:gap-0">
-            <div className="rounded-(--radius) flex flex-col justify-between space-y-8 border p-6 md:col-span-2 md:my-2 md:rounded-r-none md:border-r-0 lg:p-10">
-                <div className="space-y-2">
-                        <Image className=" w-full inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1 " src={productImg2} alt="cerro image" priority height={200} width={300}  />
-
-                    
-
-                </div>
+    <>
+    <section className="relative py-16 md:py-32">
+      <form action={add} className="space-y-4">
+        <div className="mx-auto max-w-5xl px-6">
+            <div className="mx-auto max-w-2xl text-center">
+                <h1 className="text-center text-4xl font-semibold lg:text-5xl">Encargue su kit {label}</h1>
             </div>
-
-            <div className="dark:bg-muted rounded-(--radius) border p-6 shadow-lg shadow-gray-950/5 md:col-span-3 lg:p-10 dark:[--color-muted:var(--color-zinc-900)] align-middle align-center">
-                <div className="grid mt-10 align-middle align-center gap-6 sm:grid-cols-2">
-                    <div className="space-y-4">
-                      <div>
-                          <h2 className="font-medium">Cerro {label}</h2>
-                          <span className="my-3 block text-2xl font-semibold">${productPrice}</span>
-                          <p className="text-muted-foreground text-sm">Hasta tres pagos</p>
-                      </div>
-                      <input
+            <div className="mt-8 md:mt-20">
+              <div className="bg-card relative rounded-3xl border shadow-2xl shadow-zinc-950/5">
+                  <div className="grid items-center gap-12 divide-y p-12 md:grid-cols-2 md:divide-x md:divide-y-0">
+                      <div className="pb-12 text-center md:pb-0 md:pr-12">
+                        <h3 className="text-2xl font-semibold">Kit de instalacion</h3>
+                        <p className="mt-2 text-lg">Listo para amurar y armar</p>
+                        <span className="mb-6 mt-12 inline-block text-6xl font-bold">
+                            <span className="text-4xl">$</span>{productPrice}
+                        </span>
+                        <input
                           type="hidden"
                           name="text"
                           value={`Kit ${label}` } />
-                      <input
+                        <input
                           type="hidden"
                           name="price"
                           value={ productPrice } />
-                      <Button
+
+                        <div className="flex justify-center">
+                          <Button
                           className="w-full cursor-pointer"
                           type="submit"
                           >
-                        Pagar con
-                        <Image className="h-auto" src={MPLogo} alt="mp" height={80} width={100}/>
-                      </Button>
-                    </div>
+                          Pagar con
+                          <Image className="h-auto" src={MPLogo} alt="mp" height={80} width={100}/>
+                          </Button>
+                        </div>
 
-                    <div>
-                        <div className="text-sm font-medium">Incluye:</div>
-
-                        <ul className="mt-4 list-outside space-y-3 text-sm">
-                            {productDesc2.map((item, index) => (
-                              <li
-                              key={index}
-                              className="flex items-center gap-2">
-                                    <Check className="size-3" />
-                                    {item}
-                                </li>
-                            ))}
+                        <p className="text-muted-foreground mt-12 my-4 text-sm">Incluye: tarugos y tornillos para amurar los paneles y tornillos y arandelas para fijar las tomas</p>
+                        </div>
+                        <div className="relative">
+                          <ul className="mt-4 list-outside space-y-3 text-sm">
+                          {productDesc2.map((item, index) => (
+                            <li
+                            key={index}
+                            className="flex items-center gap-2">
+                              <Check className="size-3" />
+                              {item}
+                            </li>
+                          ))}
                         </ul>
-                    </div>
+                        <p className="text-muted-foreground mt-6 text-sm">Para armar, jugar, aprender y crecer.</p>
+                        <div className="mt-6 flex flex-wrap items-center gap-6">
+                        <Logo />
+                        <div className="lg:grid items-center space-x-2 sm:flex-row sm:justify-center">
+                            <span className="text-sm font-script ">Mini Boulder</span>
+
+                            <span className="text-lg mt-0 font-casual lg:inline-block">Pared Aventura</span>
+                        </div>
+                      </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-    </form>
+          </div>
+        </form>
+      </section>
+    </>
 
   )
 }

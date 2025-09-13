@@ -1,44 +1,61 @@
-import { createSupabaseClient } from '@/utils/supabase/client'
-import React from 'react'
+import { createSupabaseClient, GetUser, SignOut } from '@/utils/supabase/client'
+import React, { Dispatch, SetStateAction } from 'react'
 import { Button } from './ui/button'
 import { cn } from '@/lib/utils'
 import { Link } from 'lucide-react'
 import { createClient } from '@/utils/supabase/server'
+import Image from 'next/image'
+import { Session, User } from '@supabase/supabase-js'
 
-export default async function AuthButton ({isScrolled}: {isScrolled: Boolean}) {
-  
-    // const { data: session } = useSession()
-    // const {getSession, getUser} = await createClient().auth
-    const supabase = await createClient()
-    const session = await supabase.auth.getSession()
-    const {data : user} = await supabase.auth.getUser()
-    console.log(user)
-
-    if (session) {
-      return (<>
-      {user} <br />
-        <Button
-          asChild
-          size="sm"
-          variant="outline"
-          className={cn(isScrolled && 'lg:hidden')}
-          // onClick={}
-          >
-            <span>Deslogearse</span>
-        </Button>
-      </>
-      )
+export function AuthButton({isScrolled, user, loading}: {isScrolled: Boolean, user: User | null,
+  loading: boolean
+}) {
+    
+    
+    function isLoggedIn() {
+    return user?.user_metadata.email !== undefined
     }
-    return (
+    const username = user?.user_metadata.full_name
+    const avatar = user?.user_metadata.avatar_url
+
+    const isUser = isLoggedIn()
+
+
+    function handleClick() {
+      SignOut()
+    }
+
+    // if (isLoggedIn) {
+        return (
+            <>
+                {isUser ? <>
+                <Image alt="avatar"
+                src={avatar}
+                className='rounded-full'
+                height={35}
+                width={35}
+                /> <br />
+                <Button
+                    asChild
+                    size="sm"
+                    variant="outline"
+                    // disabled={loading}
+                    className={cn('cursor-pointer', isScrolled && 'lg:hidden cursor-pointer')}
+                    onClick={()=> handleClick()}
+                >
+                    <span>Deslogearse</span>
+                </Button></>
+                :
         <Button
             asChild
             size="sm"
-            className={cn(isScrolled && 'lg:hidden')}>
+            className={cn('cursor-pointer', isUser && 'lg:hidden', isScrolled && 'lg:hidden cursor-pointer')}>
             <Link href="/login">
                 <span>Logearse</span>
             </Link>
-        </Button>
-    )
-  
-  
+        </Button>}
+            </>
+        )
+    // } else return (
+    // )
 }
