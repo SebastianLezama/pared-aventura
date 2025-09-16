@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import React, { useCallback, useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
-import { createSupabaseClient } from '@/utils/supabase/client'
+import { createSupabaseClient, SignOut } from '@/utils/supabase/client'
 import type { Session, User } from '@supabase/supabase-js'
 import { AuthButton } from './auth-button'
 
@@ -26,6 +26,11 @@ const supabase = createSupabaseClient()
 const [session, setSession] = useState<Session | null>(null)
 const [user, setUser] = useState<User | null>(null)
 
+function handleClick() {
+    setLoading(false)
+    SignOut()
+    }
+
 const fetchSession = useCallback(async () => {
     try {
         const { data, error } = await supabase.auth.getSession()
@@ -42,17 +47,17 @@ const fetchSession = useCallback(async () => {
     }
 }, [user, supabase])
 
-useEffect(() => {
-    fetchSession()
+// useEffect(() => {
+//     fetchSession()
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-        setUser(session?.user || null);
-    });
+//     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+//         setUser(session?.user || null);
+//     });
 
-    return () => {
-        subscription.unsubscribe();
-    };
-}, [user, fetchSession])
+//     return () => {
+//         subscription.unsubscribe();
+//     };
+// }, [user, fetchSession])
 
 useEffect(() => {
     const handleScroll = () => {
@@ -139,7 +144,7 @@ return (
                                     <span>Login??</span>
                                 </Link>
                             </Button>} */}
-                            <AuthButton isScrolled={isScrolled} user={user}  loading={loading}/>
+                            <AuthButton isScrolled={isScrolled} user={user}  loading={loading} handleClick={handleClick}/>
                             {/* <Button
                                 asChild
                                 size="sm"

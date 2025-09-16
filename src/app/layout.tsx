@@ -47,6 +47,7 @@ export default async function RootLayout({
 }>) {
 
   // const session = await getServerSession()
+  // console.log(session)
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -59,7 +60,8 @@ export default async function RootLayout({
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-            > */}<div className="flex flex-col min-h-svh">
+            > */}
+            <div className="flex flex-col min-h-svh">
 
             <Header />
             {children}

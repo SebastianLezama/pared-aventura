@@ -1,3 +1,4 @@
+'use client'
 import { createSupabaseClient, GetUser, SignOut } from '@/utils/supabase/client'
 import React, { Dispatch, SetStateAction } from 'react'
 import { Button } from './ui/button'
@@ -7,8 +8,8 @@ import { createClient } from '@/utils/supabase/server'
 import Image from 'next/image'
 import { Session, User } from '@supabase/supabase-js'
 
-export function AuthButton({isScrolled, user, loading}: {isScrolled: Boolean, user: User | null,
-  loading: boolean
+export function AuthButton({isScrolled, user, loading, handleClick}: {isScrolled: Boolean, user: User | null,
+    loading: boolean, handleClick: any
 }) {
     
     
@@ -21,14 +22,15 @@ export function AuthButton({isScrolled, user, loading}: {isScrolled: Boolean, us
     const isUser = isLoggedIn()
 
 
-    function handleClick() {
-      SignOut()
-    }
+    // function handleClick() {
+    //     SignOut()
+    // }
 
     // if (isLoggedIn) {
         return (
             <>
-                {isUser ? <>
+                {!loading ? 
+                (<>
                 <Image alt="avatar"
                 src={avatar}
                 className='rounded-full'
@@ -44,16 +46,19 @@ export function AuthButton({isScrolled, user, loading}: {isScrolled: Boolean, us
                     onClick={()=> handleClick()}
                 >
                     <span>Deslogearse</span>
-                </Button></>
+                </Button>
+                </>)
                 :
-        <Button
-            asChild
-            size="sm"
-            className={cn('cursor-pointer', isUser && 'lg:hidden', isScrolled && 'lg:hidden cursor-pointer')}>
-            <Link href="/login">
-                <span>Logearse</span>
-            </Link>
-        </Button>}
+                <Button
+                    asChild
+                    size="sm"
+                    className={cn('cursor-pointer',
+                    // loading && 'lg:hidden',
+                    isScrolled && 'lg:hidden cursor-pointer')}>
+                    <Link href="/login">
+                        <span>Logearse</span>
+                    </Link>
+                </Button>}
             </>
         )
     // } else return (
