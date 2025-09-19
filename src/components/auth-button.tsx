@@ -1,36 +1,49 @@
 'use client'
 import { createSupabaseClient, GetUser, SignOut } from '@/utils/supabase/client'
-import React, { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction, useEffect } from 'react'
 import { Button } from './ui/button'
 import { cn } from '@/lib/utils'
-import { Link } from 'lucide-react'
-import { createClient } from '@/utils/supabase/server'
 import Image from 'next/image'
 import { Session, User } from '@supabase/supabase-js'
+import Link from 'next/link'
 
-export function AuthButton({isScrolled, user, loading, handleClick}: {isScrolled: Boolean, user: User | null,
-    loading: boolean, handleClick: any
+export function AuthButton({isScrolled}: {isScrolled: Boolean
 }) {
-    
-    
-    function isLoggedIn() {
-    return user?.user_metadata.email !== undefined
+    const supabase = createSupabaseClient()
+    const [user, setUser] = React.useState<User | null>(null)
+    const [isUser, setIsUser] = React.useState(false)
+    async function fetchUser() {
+        const {data} = await supabase?.auth.getUser()
+        const user = data?.user || null
+        return user
     }
+
+    useEffect(() => {
+        async function fetchAndSetUser() {
+            const user = await fetchUser()
+            if (user) {
+                setUser(user)
+                setIsUser(true)
+            }
+        }
+        fetchAndSetUser()
+    }, [])
+    
+
     const username = user?.user_metadata.full_name
     const avatar = user?.user_metadata.avatar_url
 
-    const isUser = isLoggedIn()
 
 
-    // function handleClick() {
-    //     SignOut()
-    // }
+    function handleClick() {
+        SignOut()
+    }
 
     // if (isLoggedIn) {
         return (
             <>
-                {!loading ? 
-                (<>
+                {isUser ? 
+                <>
                 <Image alt="avatar"
                 src={avatar}
                 className='rounded-full'
@@ -47,18 +60,21 @@ export function AuthButton({isScrolled, user, loading, handleClick}: {isScrolled
                 >
                     <span>Deslogearse</span>
                 </Button>
-                </>)
+                </>
                 :
+                <>
                 <Button
                     asChild
                     size="sm"
                     className={cn('cursor-pointer',
-                    // loading && 'lg:hidden',
-                    isScrolled && 'lg:hidden cursor-pointer')}>
+                    isScrolled && 'lg:hidden cursor-pointer')}
+                    >
                     <Link href="/login">
-                        <span>Logearse</span>
+                        Logearse
                     </Link>
-                </Button>}
+                </Button>
+                </>
+                }
             </>
         )
     // } else return (

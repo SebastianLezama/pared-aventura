@@ -133,26 +133,7 @@ return (
                             </ul>
                         </div>
                         <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                            {/* <ModeToggle /> */}
-                            {/* { !isLoggedIn &&
-                            <Button
-                                asChild
-                                variant="outline"
-                                size="sm"
-                                className={cn(isScrolled && 'lg:hidden')}>
-                                <Link href="/login">
-                                    <span>Login??</span>
-                                </Link>
-                            </Button>} */}
-                            <AuthButton isScrolled={isScrolled} user={user}  loading={loading} handleClick={handleClick}/>
-                            {/* <Button
-                                asChild
-                                size="sm"
-                                className={cn(isScrolled && 'lg:hidden')}>
-                                <Link href="#">
-                                    <span>Registrarse</span>
-                                </Link>
-                            </Button> */}
+                            <AuthButton isScrolled={isScrolled} />
                             <Button
                                 asChild
                                 size="sm"
