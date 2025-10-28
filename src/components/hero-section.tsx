@@ -28,7 +28,7 @@ const transitionVariants = {
     },
 }
 
-const heroImage = "https://sdepasczvfemrliuatcb.supabase.co/storage/v1/object/public/images/hero_image.png"
+const heroImage = "https://sdepasczvfemrliuatcb.supabase.co/storage/v1/object/sign/images/hero_image.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82NmVjYzdmNS1lMWY0LTQ2ZWUtODYwZS05MDQ1YmRmMDYwNjkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvaGVyb19pbWFnZS5wbmciLCJpYXQiOjE3NjE2ODc2NjMsImV4cCI6MTc5MzIyMzY2M30.E8m-FVuWC5LNX1qiT_tj8mCQbP7NDjHVmgz7QZnsmBA"
 
 export default function HeroSection() {
     return (
