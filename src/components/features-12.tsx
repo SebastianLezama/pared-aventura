@@ -12,20 +12,20 @@ export default function Features() {
 
     const images = {
         'item-1': {
-            image: 'https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/7148c782-8cb7-4e33-8a25-c66603cafca9.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvNzE0OGM3ODItOGNiNy00ZTMzLThhMjUtYzY2NjAzY2FmY2E5LnBuZyIsImlhdCI6MTc1NTM1NDMzNCwiZXhwIjoxNzg2ODkwMzM0fQ.jf34kQMzCNg55bKhCuzVDlbit_QjlKEDUUW8Av2ZlGw',
-            alt: 'Database visualization',
+            image: 'https://sdepasczvfemrliuatcb.supabase.co/storage/v1/object/public/images/feature_01.png',
+            alt: 'Que es Mini Boulder',
         },
         'item-2': {
-            image: 'https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/dibujo_6.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvZGlidWpvXzYucG5nIiwiaWF0IjoxNzU1MzgxMzQ5LCJleHAiOjE3ODY5MTczNDl9.Wl_pR4mbX4PluEG7OjI8cjWEfBwexIcKk7uCx-MwOHo',
-            alt: 'Security authentication',
+            image: 'https://sdepasczvfemrliuatcb.supabase.co/storage/v1/object/public/images/feature_02.png',
+            alt: 'Beneficios de la escalada',
         },
         'item-3': {
-            image: 'https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/Planchas%20Stickers.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvUGxhbmNoYXMgU3RpY2tlcnMuanBnIiwiaWF0IjoxNzU1MzU4NjM3LCJleHAiOjE3ODY4OTQ2Mzd9.q3RMcg9ydVsbCDqlcrA6YuKWLk2dCufd6QhE26YkqsE',
-            alt: 'Identity management',
+            image: 'https://sdepasczvfemrliuatcb.supabase.co/storage/v1/object/public/images/feature_03.png',
+            alt: 'Por que stickers',
         },
         'item-4': {
-            image: 'https://zaixtvloxvtlauxdlrhg.supabase.co/storage/v1/object/sign/Images/4_paneles.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNThhYmJhMy1jMjRlLTQ2ZjAtYjI3Ni0xODhlODhjMWQ1OTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvNF9wYW5lbGVzLnBuZyIsImlhdCI6MTc1NTM4MTQxNCwiZXhwIjoxNzg2OTE3NDE0fQ.buqKGs1uL4CmDzZPh1GodyjaKlg3RNUQftxmEHpXJl4',
-            alt: 'Analytics dashboard',
+            image: 'https://sdepasczvfemrliuatcb.supabase.co/storage/v1/object/public/images/feature_04.png',
+            alt: 'Nuestros Kits',
         },
     }
 
