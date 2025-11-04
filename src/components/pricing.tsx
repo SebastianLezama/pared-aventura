@@ -2,8 +2,14 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Check } from 'lucide-react'
+import { productLabels } from '@/utils/utils'
 
 export default function Pricing() {
+
+        
+    const aconcaguaPrice = productLabels["aconcagua"].price
+    const champaquiPrice = productLabels["champaqui"].price
+
     return (
         <section id='products' className="py-16 md:py-32">
             <div className="mx-auto max-w-4xl px-6">
@@ -17,7 +23,7 @@ export default function Pricing() {
                         <CardHeader>
                             <CardTitle className="font-medium">Cerro Champaquí</CardTitle>
 
-                            <span className="my-3 block text-2xl font-semibold">$200.000</span>
+                            <span className="my-3 block text-2xl font-semibold">${champaquiPrice}</span>
 
                             <CardDescription className="text-sm">Kit para 3 a 5 años</CardDescription>
                             <Button
@@ -50,7 +56,7 @@ export default function Pricing() {
                         <CardHeader>
                             <CardTitle className="font-medium">Cerro Aconcagua</CardTitle>
 
-                            <span className="my-3 block text-2xl font-semibold">$300.000</span>
+                            <span className="my-3 block text-2xl font-semibold">${aconcaguaPrice}</span>
 
                             <CardDescription className="text-sm">Kit para 5 a 8 años</CardDescription>
 
