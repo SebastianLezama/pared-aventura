@@ -29,6 +29,8 @@ const transitionVariants = {
     },
 }
 
+const heroImage = "https://sdepasczvfemrliuatcb.supabase.co/storage/v1/object/sign/images/hero_image.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82NmVjYzdmNS1lMWY0LTQ2ZWUtODYwZS05MDQ1YmRmMDYwNjkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvaGVyb19pbWFnZS5wbmciLCJpYXQiOjE3NjE2ODc4MTYsImV4cCI6MTc5MzIyMzgxNn0.NRxsRjKcC9G9r3U_qM4HIjylKaNkDetV9aWoFW0BnVs"
+
 export default function HeroSection() {
     return (
         <>
@@ -160,14 +162,22 @@ export default function HeroSection() {
                                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                     <Image
                                         className="bg-background relative hidden rounded-2xl dark:block"
+<<<<<<< HEAD
                                         src={HERO}
+=======
+                                        src={heroImage}
+>>>>>>> c64f49fbaf759b82f9c26ceb606763715249b341
                                         alt="app screen"
                                         width="1536"
                                         height="1024"
                                     />
                                     <Image
                                         className="z-2 border-border/25 relative rounded-2xl border dark:hidden"
+<<<<<<< HEAD
                                         src={HERO}
+=======
+                                        src={heroImage}
+>>>>>>> c64f49fbaf759b82f9c26ceb606763715249b341
                                         alt="app screen"
                                         width="1536"
                                         height="1024"

@@ -17,7 +17,7 @@ export default function Pricing() {
                         <CardHeader>
                             <CardTitle className="font-medium">Cerro Champaquí</CardTitle>
 
-                            <span className="my-3 block text-2xl font-semibold">$250.000</span>
+                            <span className="my-3 block text-2xl font-semibold">$200.000</span>
 
                             <CardDescription className="text-sm">Kit para 3 a 5 años</CardDescription>
                             <Button
@@ -50,7 +50,7 @@ export default function Pricing() {
                         <CardHeader>
                             <CardTitle className="font-medium">Cerro Aconcagua</CardTitle>
 
-                            <span className="my-3 block text-2xl font-semibold">$350.000</span>
+                            <span className="my-3 block text-2xl font-semibold">$300.000</span>
 
                             <CardDescription className="text-sm">Kit para 5 a 8 años</CardDescription>
 
