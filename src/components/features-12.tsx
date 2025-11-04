@@ -13,19 +13,19 @@ export default function Features() {
 
     const images = {
         'item-1': {
-            image: 'https://sdepasczvfemrliuatcb.supabase.co/storage/v1/object/public/images/feature_01.png',
+            image: FEATURE_01,
             alt: 'Que es Mini Boulder',
         },
         'item-2': {
-            image: 'https://sdepasczvfemrliuatcb.supabase.co/storage/v1/object/public/images/feature_02.png',
+            image: FEATURE_02,
             alt: 'Beneficios de la escalada',
         },
         'item-3': {
-            image: 'https://sdepasczvfemrliuatcb.supabase.co/storage/v1/object/public/images/feature_03.png',
+            image: FEATURE_03,
             alt: 'Por que stickers',
         },
         'item-4': {
-            image: 'https://sdepasczvfemrliuatcb.supabase.co/storage/v1/object/public/images/feature_04.png',
+            image: FEATURE_04,
             alt: 'Nuestros Kits',
         },
     }

@@ -3,8 +3,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button'
 import { Check } from 'lucide-react'
 import Link from 'next/link';
-import { use } from 'react';
-import { param } from 'motion/react-client';
+
 import { Logo } from './logo';
 import { productLabels } from "@/utils/utils";
 
@@ -12,9 +11,9 @@ import { productLabels } from "@/utils/utils";
 
 export type Params = Promise<{ id: string }>
 
-interface PageProps {
-    params: Promise<{ id: string }>;
-}
+// interface PageProps {
+//     params: Promise<{ id: string }>;
+// }
 
 export default async function ContentProduct(props: {params: Params}) {
 

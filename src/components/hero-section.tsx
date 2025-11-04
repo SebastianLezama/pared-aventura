@@ -4,9 +4,9 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
-import { Header } from './header'
+// import { Header } from './header'
 import { Logo } from './logo'
-import OneTapComponent from './oneTap'
+// import OneTapComponent from './oneTap'
 import { HERO } from '@/assets/images'
 
 const transitionVariants = {

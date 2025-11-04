@@ -1,7 +1,7 @@
 import {redirect} from "next/navigation";
 import { Button } from '@/components/ui/button'
 import { Check } from 'lucide-react'
-import Link from 'next/link'
+// import Link from 'next/link'
 import api from "../app/api/mp-api";
 import { Params } from "./content-5";
 import { productLabels } from "@/utils/utils";
