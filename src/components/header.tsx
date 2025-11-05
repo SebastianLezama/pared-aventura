@@ -26,8 +26,7 @@ export const Header = ({ isLoggedIn, user}: {isLoggedIn: Boolean, user: User | n
 
     
 
-    function AuthButton({ isLoggedIn, user }: { isLoggedIn: Boolean, user: User | null
-    }) {
+    function AuthButton() {
         
         const username = user?.user_metadata.full_name
 

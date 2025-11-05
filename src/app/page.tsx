@@ -23,7 +23,7 @@ export default async function Home() {
 
   return (
     <>
-    <Header isLoggedIn={isLoggedIn()} user={user.user}/>
+    {/* <Header isLoggedIn={isLoggedIn()} user={user.user}/> */}
     <HeroSection />
     <Features />
     <Pricing />

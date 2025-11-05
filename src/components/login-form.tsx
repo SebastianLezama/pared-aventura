@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import OneTapComponent from "./oneTap"
-import { createSupabaseClient } from "@/utils/supabase/client"
+// import { createSupabaseClient } from "@/utils/supabase/client"
 import GoogleButton from "./google-button"
 
 
@@ -19,7 +19,7 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-    const supabase = createSupabaseClient()
+    // const supabase = createSupabaseClient()
   
   return (
     <div className={cn("flex flex-col gap-6 min-w-sm ", className)} {...props}>

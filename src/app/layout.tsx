@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme/theme-provider";
+// import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Header } from "@/components/header";
 import FooterSection from "@/components/footer";
-import { getServerSession } from "next-auth";
-import SessionProvider from "../utils/session-provider"
+// import { getServerSession } from "next-auth";
+// import SessionProvider from "../utils/session-provider"
+import { createClient } from "@/utils/supabase/server";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,6 +46,16 @@ export default async function RootLayout({
 }>) {
 
   // const session = await getServerSession()
+  const supabase = await createClient()
+    const { data: sessionData } = await supabase.auth.getSession()
+    const { data: user } = await supabase.auth.getUser()
+    
+    // const user = sessionData.session?.user.user_metadata.full_name
+    console.log(user.user)
+  
+    function isLoggedIn() {
+      return sessionData.session?.user.email !== undefined
+    }
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -59,7 +70,7 @@ export default async function RootLayout({
             disableTransitionOnChange
             > */}<div className="flex flex-col min-h-svh">
 
-            <Header />
+            <Header isLoggedIn={isLoggedIn()} user={user.user}/>
             {children}
             <FooterSection />
           </div>
