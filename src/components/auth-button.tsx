@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 import { Link } from 'lucide-react'
 import { createClient } from '@/utils/supabase/server'
 
-export default async function AuthButton ({isScrolled}: {isScrolled: Boolean}) {
+export default async function AuthButton ({isScrolled}: {isScrolled: boolean}) {
   
     // const { data: session } = useSession()
     // const {getSession, getUser} = await createClient().auth

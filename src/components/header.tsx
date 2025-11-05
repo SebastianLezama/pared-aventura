@@ -18,7 +18,7 @@ const menuItems = [
 ]
 
 
-export const Header = ({ isLoggedIn, user}: {isLoggedIn: Boolean, user: User | null}) => {
+export const Header = ({ isLoggedIn, user}: {isLoggedIn: boolean, user: User | null}) => {
     const [menuState, setMenuState] = React.useState(false)
     const [isScrolled, setIsScrolled] = React.useState(false)
     const pathname = usePathname()
